@@ -39,15 +39,13 @@ class Absensi extends MY_Controller {
                 $this->load->model('dashboard/Dashboard_m');
                 $data_mhs = $this->Dashboard_m->get()->result();
                 $check_absen = $this->db->get_where('absen', array('mahasiswa_id' => $check['id']))->row_array();
-                // var_dump($check_absen);
-                // die();
                 if($check_absen == NULL){
                     $insert = $this->db->insert('absen',$data);
                     $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><i class="icon fa fa-ban"></i>Terimakasih sudah melakukan absensi</div>');
-                    redirect('absensi');
+                    redirect('landing');
                 }else{
                     $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><i class="icon fa fa-ban"></i>Anda sudah melakukan absensi sebelumnya</div>');
-                    redirect('absensi');
+                    redirect('landing');
                 }
             }
         }else{
