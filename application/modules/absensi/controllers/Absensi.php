@@ -45,7 +45,7 @@ class Absensi extends MY_Controller {
                     redirect('landing');
                 }else{
                     $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><i class="icon fa fa-ban"></i>Anda sudah melakukan absensi sebelumnya</div>');
-                    redirect('landing');
+                    redirect('absensi');
                 }
             }
         }else{
