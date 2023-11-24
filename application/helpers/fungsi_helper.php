@@ -16,22 +16,6 @@ function check_not_login() {
 	} 
 }
 
-function check_already_validate() {
-	$ci =& get_instance();
-	$validate_session = $ci->session->userdata('validation');
-	if($validate_session == 'active') {
-		redirect ('auth');
-	} 
-}
-
-function check_not_validate() {
-	$ci =& get_instance();
-	$validate_session = $ci->session->userdata('validation');;
-	if($validate_session != 'active') {
-		redirect ('validasi');
-	} 
-}
-
 function check_admin() {
 	$ci =& get_instance();
 	$ci->load->library('fungsi');

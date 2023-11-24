@@ -12,7 +12,6 @@ class Auth extends MY_Controller {
 
 	public function index()
 	{
-        check_not_validate();
         check_already_login();
         $maintenance = $this->Maintenance_m->maintenance();
         if($maintenance != true){

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Dinas Sosial | Karanganyar</title>
+	<title>Absensi | Univ</title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
@@ -34,9 +34,9 @@
 			<!-- Logo -->
 			<a href="<?=base_url();?>assets/index2.html" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>D</b>S</span>
+				<span class="logo-mini"><b>ABS</b></span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>Dinas</b>Sosial</span>
+				<span class="logo-lg"><b>Absensi</b>Univ</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top">
@@ -107,44 +107,11 @@
                         <a href="<?=site_url('dashboard');?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
 					</li>
 
-                    <li <?=$this->uri->segment(1) == 'manage' || $this->uri->segment(1) == '' ? 'class="active"' : ''?>>
-                        <a href="<?=site_url('manage');?>"><i class="fa fa-pencil"></i> <span>Manage</span></a>
-					</li>
-
-                    <li class="header">LAPORAN</li>
-
-                    <li class="treeview <?=$this->uri->segment(1) == 'laporan' ? 'active' : ''?>">
-						<a href="#">
-							<i class="fa fa-book"></i>
-							<span>Laporan PBI-KIS</span>
-							<span class="pull-right-container">
-								<i class="fa fa-angle-left pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li <?=$this->input->get('jenis') == 'sangat_miskin' || $this->input->get('jenis') == '' ? 'class="active"' : ''?>>
-								<a href="<?=site_url('laporan');?>?jenis=sangat_miskin"><i class="fa fa-book"></i> Laporan Sangat Miskin</a>
-							</li>
-							<li <?=$this->input->get('jenis') == 'miskin' || $this->input->get('jenis') == '' ? 'class="active"' : ''?>>
-								<a href="<?=site_url('laporan');?>?jenis=miskin"><i class="fa fa-book"></i> Laporan Miskin</a>
-							</li>
-							<li <?=$this->input->get('jenis') == 'hampir_miskin' || $this->input->get('jenis') == '' ? 'class="active"' : ''?>>
-								<a href="<?=site_url('laporan');?>?jenis=hampir_miskin"><i class="fa fa-book"></i> Laporan Hampir Miskin</a>
-							</li>
-							<li <?=$this->input->get('jenis') == 'mampu' || $this->input->get('jenis') == '' ? 'class="active"' : ''?>>
-								<a href="<?=site_url('laporan');?>?jenis=mampu"><i class="fa fa-book"></i> Laporan Mampu</a>
-							</li>
-						</ul>
-					</li>
-
 					<?php if($this->session->userdata('level') == 1){ ?>
                     <li class="header">SETTINGS</li>
 
                     <li <?=$this->uri->segment(1) == 'user' || $this->uri->segment(1) == '' ? 'class="active"' : ''?>>
                         <a href="<?=site_url('user');?>"><i class="fa fa-users"></i> <span>Users</span></a>
-					</li>
-					<li <?=$this->uri->segment(1) == 'cloud_storrage' || $this->uri->segment(1) == '' ? 'class="active"' : ''?>>
-                        <a href="<?=site_url('cloud_storrage');?>"><i class="fa fa-users"></i> <span>Minio</span></a>
 					</li>
 					<?php } ?>
 				</ul>

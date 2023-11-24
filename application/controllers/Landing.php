@@ -8,7 +8,7 @@ class Landing extends MY_Controller {
         parent::__construct();
     }
 
-	public function index($data = NULL)
+	public function index()
 	{
         $this->load->view('landing');
 	}
