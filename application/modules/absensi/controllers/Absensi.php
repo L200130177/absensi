@@ -42,7 +42,7 @@ class Absensi extends MY_Controller {
                 if($check_absen == NULL){
                     $insert = $this->db->insert('absen',$data);
                     $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><i class="icon fa fa-ban"></i>Terimakasih sudah melakukan absensi</div>');
-                    redirect('landing');
+                    redirect('absensi');
                 }else{
                     $this->session->set_flashdata('message', '<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><i class="icon fa fa-ban"></i>Anda sudah melakukan absensi sebelumnya</div>');
                     redirect('absensi');
